@@ -26,6 +26,7 @@
 <script>
 import axios from "axios";
 import dateformat from "../../filters/dateformat";
+import {Toast} from 'mint-ui'
 export default {
   data() {
     return {

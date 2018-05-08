@@ -5,6 +5,8 @@ import Router from 'vue-router'
 // 引入商品页组件
 import GoodList from "@/components/goods/list";
 import GoodDetail from "@/components/goods/detail";
+import Desc from "@/components/goods/desc";
+import Comment from '@/components/goods/comment'
 
 // 引入新闻页组件
 import NewsList from "@/components/news/list";
@@ -50,7 +52,15 @@ export default new Router({
       component: GoodList
     },
     {
-      path: "/goods/detail",
+      path: "/goods/desc/:id",
+      component: Desc
+    },
+    {
+      path: "/goods/comment/:id",
+      component: Comment
+    },
+    {
+      path: "/goods/detail/:id",
       component: GoodDetail
     },
     // 新闻页路由
@@ -64,11 +74,11 @@ export default new Router({
     },
     // 图片页路由
     {
-      path: "/pictures",
+      path: "/pictures/:id?",
       component: PicList
     },
     {
-      path: "/pictures/detail",
+      path: "/pictures/detail/:id",
       component: PicDetail
     }
   ],

@@ -1,15 +1,6 @@
 <template>
   <div class="page news">
-    <div class="news-detail">
-      <div class="news-title">
-        <h4>{{ newsList.title }}</h4>
-        <p>
-          <span>发表时间: {{ newsList.add_time | dateformat('YYYY-MM-DD HH:mm:ss')}}</span>
-          <span>点击： {{newsList.click}}</span>
-        </p>
-      </div>
-      <div class="news-content" v-html="newsList.content"></div>
-    </div>
+    <detail :article="newsList"></detail>
     <div class="news-comment">
       <comment :id="$route.params.id"></comment>
     </div>
@@ -20,7 +11,7 @@
 import moment from "moment";
 import dateformat from "@/filters/dateformat";
 import axios from "axios";
-
+import detail from '../common/detail'
 import comment from "../common/comment.vue";
 export default {
   data() {
@@ -41,7 +32,8 @@ export default {
     dateformat
   },
   components: {
-    comment
+    comment,
+    detail
   }
 };
 </script>
